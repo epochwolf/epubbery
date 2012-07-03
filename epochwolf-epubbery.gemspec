@@ -4,16 +4,16 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{epubbery}
-  s.version = "0.2.0"
+  s.name = %q{epochwolf-epubbery}
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jason LaPier"]
-  s.date = %q{2011-06-18}
+  s.authors = ["Jason LaPier", "epochwolf"]
+  s.date = %q{2012-07-02}
   s.default_executable = %q{epubbery}
   s.description = %q{Generates a template directory that you can use to build a custom epub. 
     After customizing templates, use bin/gen_epub.rb to create and validate an epub archive.}
-  s.email = %q{jason.lapier@gmail.com}
+  s.email = %q{epochwolf@gmail.com}
   s.executables = ["epubbery"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/epubbery",
     "config_sample.yml",
-    "epubbery.gemspec",
+    "epochwolf-epubbery.gemspec",
     "lib/book.rb",
     "lib/chapter.rb",
     "lib/epub.rb",
@@ -87,10 +87,8 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<liquid>, [">= 0"])
       s.add_runtime_dependency(%q<uuid>, [">= 0"])
       s.add_runtime_dependency(%q<linguistics>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.2.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.1"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.1.4"])
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
       s.add_runtime_dependency(%q<liquid>, [">= 0"])
       s.add_runtime_dependency(%q<uuid>, [">= 0"])
@@ -101,10 +99,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<liquid>, [">= 0"])
       s.add_dependency(%q<uuid>, [">= 0"])
       s.add_dependency(%q<linguistics>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.2.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_dependency(%q<bundler>, ["~> 1.1.4"])
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<liquid>, [">= 0"])
       s.add_dependency(%q<uuid>, [">= 0"])
@@ -116,10 +112,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<liquid>, [">= 0"])
     s.add_dependency(%q<uuid>, [">= 0"])
     s.add_dependency(%q<linguistics>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.2.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+    s.add_dependency(%q<bundler>, ["~> 1.1.4"])
     s.add_dependency(%q<RedCloth>, [">= 0"])
     s.add_dependency(%q<liquid>, [">= 0"])
     s.add_dependency(%q<uuid>, [">= 0"])
