@@ -1,6 +1,6 @@
 = epubbery
 
-Generates a template directory that you can use to build a custom epub file. 
+Generates a template directory that you can use to build a custom epub file. This version works on raw html instead of textile. It currently does not sanitize or validate the html. It is up to the user to make sure their xhtml validates to the xhtml 1.1 spec as required by the epub standard.
 
 Usage:
 epubbery /path/to/new/book
@@ -10,7 +10,7 @@ Go to the new directory and modify the file config.yml
 
 Run epubbery from within the new directory.
 
-Text files will be html-ized using textile (via the RedCloth gem). Check the templates directory for files you may want to customize (such as stylesheet.css or the .liquid html files).
+Text files should contain html. Check the templates directory for files you may want to customize (such as stylesheet.css or the .liquid html files).
 
 == meta tags in text files
 Any line at the top of a text file that matches a single word followed by a colon, followed by any text, will become a meta tag-like variable for that "chapter". For example, if you have:

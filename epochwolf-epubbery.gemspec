@@ -80,44 +80,13 @@ Gem::Specification.new do |s|
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rake>, [">= 0"])
-      s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
-      s.add_runtime_dependency(%q<liquid>, [">= 0"])
-      s.add_runtime_dependency(%q<uuid>, [">= 0"])
-      s.add_runtime_dependency(%q<linguistics>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.1.4"])
-      s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
-      s.add_runtime_dependency(%q<liquid>, [">= 0"])
-      s.add_runtime_dependency(%q<uuid>, [">= 0"])
-      s.add_runtime_dependency(%q<linguistics>, [">= 0"])
-    else
-      s.add_dependency(%q<rake>, [">= 0"])
-      s.add_dependency(%q<RedCloth>, [">= 0"])
-      s.add_dependency(%q<liquid>, [">= 0"])
-      s.add_dependency(%q<uuid>, [">= 0"])
-      s.add_dependency(%q<linguistics>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.1.4"])
-      s.add_dependency(%q<RedCloth>, [">= 0"])
-      s.add_dependency(%q<liquid>, [">= 0"])
-      s.add_dependency(%q<uuid>, [">= 0"])
-      s.add_dependency(%q<linguistics>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<rake>, [">= 0"])
-    s.add_dependency(%q<RedCloth>, [">= 0"])
-    s.add_dependency(%q<liquid>, [">= 0"])
-    s.add_dependency(%q<uuid>, [">= 0"])
-    s.add_dependency(%q<linguistics>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.1.4"])
-    s.add_dependency(%q<RedCloth>, [">= 0"])
-    s.add_dependency(%q<liquid>, [">= 0"])
-    s.add_dependency(%q<uuid>, [">= 0"])
-    s.add_dependency(%q<linguistics>, [">= 0"])
+    s.add_dependency("rake",        [">= 0"])
+    s.add_dependency("liquid",      [">= 0"])
+    s.add_dependency("uuid",        [">= 0"])
+    s.add_dependency("linguistics", [">= 0"])
+    s.add_dependency("zipruby",     ["~> 0.9.9"])
+    s.add_dependency("rspec",       ["~> 2.8.0"])
+    s.add_dependency("bundler",     ["~> 1.1.4"])
   end
 end
 

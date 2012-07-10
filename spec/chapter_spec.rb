@@ -8,9 +8,9 @@ describe Chapter do
       Name: This is a Chapter with Meta
       Subhead: Created: on November 20th
 
-      "It all began a long time ago," he said.
+      <p>"It all began a long time ago," he said.</p>
 
-      And he _told_ his tale.
+      <p>And he <em>told</em> his tale.</p>
     EOF
     @file_lines_with_meta = @lines_with_meta.split("\n")
 
@@ -62,10 +62,10 @@ describe Chapter do
     chapter.content.should include('his tale')
   end
 
-  it "should use redcloth to process text" do
+  it "should use nokogiri to process text" do
     chapter = Chapter.new(@file_lines_with_meta)
     chapter.html.should include('<p>')
-    chapter.content.should include('_told_ his tale')
+    chapter.content.should include('<em>told</em> his tale')
     chapter.html.should include('<em>told</em> his tale')
   end
   

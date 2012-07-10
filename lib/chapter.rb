@@ -41,8 +41,7 @@ class Chapter
   end
   
   def html
-    content.strip!
-    @html ||= RedCloth.new(content).to_html
+    @html ||= content.strip
   end
 
   def chapter_id

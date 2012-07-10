@@ -4,7 +4,6 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 gem 'rake'
-gem 'RedCloth'
 gem 'liquid'
 gem 'uuid'
 gem 'linguistics'
