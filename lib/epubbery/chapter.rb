@@ -3,6 +3,7 @@
 # contains name, content (text-only), generates html
 #
 # file_name should reference html file to be written (inside epub archive)
+module Epubbery
 class Chapter
   include Comparable
 
@@ -100,4 +101,5 @@ class Chapter
     end
   end
 
+end
 end

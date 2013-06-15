@@ -9,8 +9,12 @@ require 'fileutils'
 require 'date'
 require 'zipruby'
 
+module Epubbery
+  
+end
+
 # epubbery libs
-require 'book'
-require 'chapter'
-require 'epub'
+require 'epubbery/book'
+require 'epubbery/chapter'
+require 'epubbery/epub'
 

@@ -13,6 +13,7 @@
 #    In this case, you need to load_custom_templates, then custom_asset_files
 #    and then when you create_zip, you're going to need almost all of the options
 #
+module Epubbery
 class Epub
   class << self
     # kind of an orphaned method that just reads in chapters from text files 
@@ -147,7 +148,7 @@ class Epub
 
     # instead of creating a zip file from scratch, we start with the base epub zipfile, 
     # make a copy and then add files to it
-    FileUtils.cp File.join(gem_dir, 'lib', 'base.epub'), zipfile
+    FileUtils.cp File.join(gem_dir, 'base.epub'), zipfile
     Zip::Archive.open(zipfile) do |ar|
       ar.add_file 'META-INF/container.xml', container_loc
       if options[:css_buffers]
@@ -249,4 +250,4 @@ class Epub
   end
 
 end
-
+end

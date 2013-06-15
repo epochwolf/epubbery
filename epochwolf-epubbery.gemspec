@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{epochwolf-epubbery}
-  s.version = "0.3.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jason LaPier", "epochwolf"]
@@ -31,9 +31,9 @@ Gem::Specification.new do |s|
     "bin/epubbery",
     "config_sample.yml",
     "epochwolf-epubbery.gemspec",
-    "lib/book.rb",
-    "lib/chapter.rb",
-    "lib/epub.rb",
+    "lib/epubbery/book.rb",
+    "lib/epubbery/chapter.rb",
+    "lib/epubbery/epub.rb",
     "lib/epubbery.rb",
     "spec/book_spec.rb",
     "spec/chapter_spec.rb",

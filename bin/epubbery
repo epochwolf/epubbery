@@ -7,7 +7,7 @@ $: << File.join(@gem_dir, 'lib')
 require 'fileutils'
 require File.join(@gem_dir, 'lib', 'epubbery')
 
-@epub = Epub.new
+@epub = Epubbery::Epub.new
 
 if ARGV[0]
   @destination = ARGV[0]
@@ -25,7 +25,7 @@ elsif File.exist?('config.yml')
   @epub_folder = File.join(Dir.getwd, @config[:temp_epub_folder])
   
   @book = Book.new @config[:book_title], @config[:author]
-  @book.chapters = Epub.read_chapters(@config[:chapter_glob])
+  @book.chapters = Epubbery::Epub.read_chapters(@config[:chapter_glob])
  
   # # uncomment to actually write temp rendered html files
   # @epub.make_skeleton Dir.getwd, @epub_folder, @config[:default_template]

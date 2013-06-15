@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe Epub do
+describe Epubbery::Epub do
   before(:all) do
-    @epub = Epub.new
+    @epub = Epubbery::Epub.new
     @tmp_epub_folder = "test_epub_folder_safe_to_remove_will_be_deleted"
     @tmp_epub_file = "test_zip_safe_to_remove.epub"
     @base_dir = File.expand_path(File.dirname(__FILE__) + "/..")
@@ -38,7 +38,7 @@ describe Epub do
   end
 
   it "should read chapters from a glob file description" do
-    chapters = Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
+    chapters = Epubbery::Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
     chapters.size.should == 2
     chapters.first.file_name.should == "1.html"
     chapters[1].file_name.should == "2.html"
@@ -46,8 +46,8 @@ describe Epub do
 
   it "should write tempates into the epub folder" do
     @epub.make_skeleton @base_dir, @tmp_epub_folder
-    book = Book.new "Testy", "Jason", Date.new(2001)
-    book.chapters = Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
+    book = Epubbery::Book.new "Testy", "Jason", Date.new(2001)
+    book.chapters = Epubbery::Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
     @epub.write_templates book
     File.exists?(File.join(@tmp_epub_folder, 'OEBPS', 'title.html')).should == true
     File.exists?(File.join(@tmp_epub_folder, 'OEBPS', '1.html')).should == true
@@ -57,8 +57,8 @@ describe Epub do
 
   it "should write tempates into the epub folder" do
     @epub.make_skeleton @base_dir, @tmp_epub_folder
-    book = Book.new "Testy", "Jason", Date.new(2001)
-    book.chapters = Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
+    book = Epubbery::Book.new "Testy", "Jason", Date.new(2001)
+    book.chapters = Epubbery::Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
     @epub.write_templates book
     File.exists?(File.join(@tmp_epub_folder, 'OEBPS', 'title.html')).should == true
     File.exists?(File.join(@tmp_epub_folder, 'OEBPS', '1.html')).should == true
@@ -68,8 +68,8 @@ describe Epub do
 
   it "should create a zip file" do
     @epub.make_skeleton @base_dir, @tmp_epub_folder
-    book = Book.new "Testy", "Jason", Date.new(2001)
-    book.chapters = Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
+    book = Epubbery::Book.new "Testy", "Jason", Date.new(2001)
+    book.chapters = Epubbery::Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
     @epub.write_templates book
     blank_epub = File.join(@base_dir, 'lib', 'base.epub')
     FileUtils.cp blank_epub, @tmp_epub_file
@@ -80,8 +80,8 @@ describe Epub do
 
   it "should create a zip file using css buffers" do
     @epub.make_skeleton @base_dir, @tmp_epub_folder
-    book = Book.new "Testy Red", "Jason", Date.new(2001)
-    book.chapters = Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
+    book = Epubbery::Book.new "Testy Red", "Jason", Date.new(2001)
+    book.chapters = Epubbery::Epub.read_chapters("#{File.join(@base_dir, @tmp_text_folder)}/*.txt")
     @epub.write_templates book
     blank_epub = File.join(@base_dir, 'lib', 'base.epub')
     FileUtils.cp blank_epub, @tmp_epub_file
